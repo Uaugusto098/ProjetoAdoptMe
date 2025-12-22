@@ -1,10 +1,6 @@
-<<<<<<< HEAD
 // assets/js/adocao.js (Somente lógica específica da página de Detalhes de Adoção)
 
 // 1. BANCO DE DADOS (DADOS PERMANECEM AQUI)
-=======
-// 1. BANCO DE DADOS
->>>>>>> db09d5377ef96be83bd9225bca4440b3ae8f9088
 const dadosAnimais = {
     'junior': {
         id: 'junior',
@@ -50,7 +46,6 @@ const dadosAnimais = {
         descricao: 'Como o nome diz, ela é um doce. Mel é uma cadela sênior que procura um final feliz tranquilo. Ela adora sonecas no sofá e carinho na barriga.',
         resumo: 'Doce e carinhosa com crianças.',
         motivos: ['Muito calma e tranquila', 'Ótima com crianças', 'Companheira para todas as horas']
-<<<<<<< HEAD
     },
     'mia': {
     id: 'mia',
@@ -61,9 +56,6 @@ const dadosAnimais = {
     resumo: 'A gatinha que inspirou a ONG. Super dócil!',
     motivos: ['Ideal para apartamento', 'Super independente', 'Adora um colo ocasional']
 }
-=======
-    }
->>>>>>> db09d5377ef96be83bd9225bca4440b3ae8f9088
 };
 
 // Variável de estado (Começa com Junior pois é o HTML padrão)
@@ -76,11 +68,7 @@ function trocarAnimal(novoAnimalId, idCardClicado) {
 
     if (!animalEntrando || !animalSaindo) return;
 
-<<<<<<< HEAD
     // A. ATUALIZA O CARROSSEL (Lógica Bootstrap)
-=======
-    // A. ATUALIZA O CARROSSEL
->>>>>>> db09d5377ef96be83bd9225bca4440b3ae8f9088
     const containerFotos = document.getElementById('lista-fotos');
     if (containerFotos) {
         containerFotos.innerHTML = '';
@@ -111,22 +99,12 @@ function trocarAnimal(novoAnimalId, idCardClicado) {
         });
     }
 
-<<<<<<< HEAD
     // ATUALIZA O LINK DO BOTÃO ADOTAR que direciona para o Contato
     const btnAdotar = document.getElementById('btn-adotar-principal');
     if (btnAdotar) {
         // Envia o nome do animal para o formulário de contato preencher a mensagem
         btnAdotar.href = `contato.html?animal=${encodeURIComponent(animalEntrando.nome)}`;
     }
-=======
-    // --- NOVIDADE: ATUALIZA O LINK DO BOTÃO ADOTAR ---
-    const btnAdotar = document.getElementById('btn-adotar-principal');
-    if (btnAdotar) {
-        // encodeURIComponent serve para que nomes com acento não quebrem o link
-        btnAdotar.href = `contato.html?animal=${encodeURIComponent(animalEntrando.nome)}`;
-    }
-    // -------------------------------------------------
->>>>>>> db09d5377ef96be83bd9225bca4440b3ae8f9088
 
     // C. ATUALIZA O CARD CLICADO (Coloca o animal que saiu lá)
     const cardElement = document.getElementById(idCardClicado);
@@ -140,60 +118,29 @@ function trocarAnimal(novoAnimalId, idCardClicado) {
         botaoCard.setAttribute('onclick', `trocarAnimal('${animalSaindo.id}', '${idCardClicado}')`);
     }
 
-<<<<<<< HEAD
     // D. ATUALIZA O ESTADO e Faz o scroll suave
-=======
-    // D. ATUALIZA O ESTADO
->>>>>>> db09d5377ef96be83bd9225bca4440b3ae8f9088
     animalNoPalco = novoAnimalId;
     window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
-<<<<<<< HEAD
 // 3. LÓGICA AO CARREGAR A PÁGINA (CHECK URL)
-=======
-// 3. LÓGICA AO CARREGAR A PÁGINA
->>>>>>> db09d5377ef96be83bd9225bca4440b3ae8f9088
 document.addEventListener("DOMContentLoaded", function() {
     const urlParams = new URLSearchParams(window.location.search);
     const animalIdURL = urlParams.get('animal'); 
 
-<<<<<<< HEAD
     // Mapeia o ID do animal da URL para o ID do Card que ele deve substituir
     if (animalIdURL && dadosAnimais[animalIdURL] && animalIdURL !== 'junior') {
         
         let idDoCard = '';
         // Assumindo que a ordem dos cards é fixa: Rex(1), Bolinha(2), Thor(3), Mel(4)
-=======
-    // Se tiver um ID na URL (ex: veio da home clicando no Rex)
-    if (animalIdURL && dadosAnimais[animalIdURL] && animalIdURL !== 'junior') {
-        
-        let idDoCard = '';
->>>>>>> db09d5377ef96be83bd9225bca4440b3ae8f9088
         if (animalIdURL === 'rex') idDoCard = 'card-1';
         if (animalIdURL === 'bolinha') idDoCard = 'card-2';
         if (animalIdURL === 'thor') idDoCard = 'card-3';
         if (animalIdURL === 'mel') idDoCard = 'card-4';
-<<<<<<< HEAD
         if (animalIdURL === 'mia') idDoCard = 'card-5';
-=======
->>>>>>> db09d5377ef96be83bd9225bca4440b3ae8f9088
 
         if (idDoCard) {
             trocarAnimal(animalIdURL, idDoCard);
         }
     }
 });
-<<<<<<< HEAD
-=======
-
-// Função do WhatsApp do botão adotar (caso clique direto sem ir pro form)
-function abrirWhatsapp() {
-    var numero = "5511903042102";
-    var elNome = document.getElementById('nome-animal');
-    var nomeAnimal = elNome ? elNome.innerText : "o animal";
-    var mensagem = "Olá! 👋 Vi o " + nomeAnimal + " no site e fiquei apaixonado. Gostaria de saber mais sobre a adoção.";
-    var link = "https://wa.me/" + numero + "?text=" + encodeURIComponent(mensagem);
-    window.open(link, '_blank');
-}
->>>>>>> db09d5377ef96be83bd9225bca4440b3ae8f9088
