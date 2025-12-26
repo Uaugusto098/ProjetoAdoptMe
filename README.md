@@ -104,7 +104,8 @@ Projeto desenvolvido por alunos da **Fatec Guarulhos** sob orientação da Prof�
 
 O sistema inclui um módulo de atendimento integrado via WhatsApp para facilitar a comunicação direta entre a ONG e os adotantes.
 
+PROJETO EM ANDAMENTO...⚙👩‍💻
 ---
 
-##PROJETO EM ANDAMENTO...⚙👩‍💻
+
 
